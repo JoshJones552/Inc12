@@ -1,0 +1,10 @@
+<!-- SUBMIT + RESET: the two classic interrupt buttons -->
+<input type="submit" value="Sign Up">   <!-- triggers form submission -->
+<input type="reset" value="Clear">      <!-- wipes ALL controls -->
+
+<!-- JS handlers can vote before either action runs: -->
+<form action="/signup" method="post"
+      onsubmit="return checkCompleteness();"
+      onreset="return window.confirm('Are you sure you want to clear the form?');">
+  …
+</form>

@@ -1,0 +1,37 @@
+body { font: 1rem/1.6 system-ui; max-width: 46rem; margin: 2rem auto; padding: 1rem; }
+label { display: block; margin-top: 1rem; }
+input, select, textarea, button { font: inherit; max-width: 100%; }
+button { margin: 1rem .5rem 0 0; }
+.step { display: none; }
+.step.active { display: block; }
+.field-error { color: #b00020; }
+[aria-invalid="true"] { border: 2px solid #b00020; }
+#error-summary { border: 2px solid #b00020; padding: 1rem; }
+:focus-visible { outline: 3px solid #3459be; outline-offset: 3px; }
+/* TODO: style the live password checklist without relying on color alone. */
+#pwRules {
+    list-style: none;
+    padding-left: 0;
+}
+
+#pwRules li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/*style for unmatched items */
+#pwRules li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #555555;
+}
+
+/*style when the rule is met */
+#pwRules li:contains("(Met)")::before,
+#pwRules li.met::before {
+    content: "✓";
+    color: #006600;
+}
